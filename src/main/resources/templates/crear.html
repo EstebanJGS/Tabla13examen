@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Agregar Hospital</title>
+</head>
+<body>
+    <h2>Registrar Nuevo Hospital</h2>
+
+    <form th:action="@{/entidades/guardar}" th:object="${hospital}" method="post">
+        
+        <div>
+            <label>ID:</label>
+            <input type="number" th:field="*{id}" required />
+        </div>
+        <br>
+
+        <div>
+            <label>Nombre:</label>
+            <input type="text" th:field="*{nombre}" required maxlength="100" />
+        </div>
+        <br>
+
+        <div>
+            <label>Dirección:</label>
+            <input type="text" th:field="*{direccion}" required maxlength="200" />
+        </div>
+        <br>
+
+        <div>
+            <label>Teléfono:</label>
+            <input type="text" th:field="*{telefono}" required maxlength="20" />
+        </div>
+        <br>
+
+        <div>
+            <label>Capacidad:</label>
+            <input type="number" th:field="*{capacidad}" required />
+        </div>
+        <br>
+
+        <div>
+            <button type="submit">Guardar</button>
+            <a th:href="@{/entidades}">Cancelar</a>
+        </div>
+    </form>
+</body>
+</html>

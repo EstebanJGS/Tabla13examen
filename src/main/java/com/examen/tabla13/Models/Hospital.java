@@ -1,4 +1,4 @@
-package com.examen.tabla13.Models;
+package com.examen.tabla13.models;
 
 public class Hospital {
     private int id;

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Hospitales</title>
+</head>
+<body>
+    <h2>Gestión de Hospitales</h2>
+    
+    <a th:href="@{/entidades/nuevo}">Agregar nuevo hospital</a>
+    <br><br>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Dirección</th>
+                <th>Teléfono</th>
+                <th>Capacidad</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="hospital : ${hospitales}">
+                <td th:text="${hospital.id}"></td>
+                <td th:text="${hospital.nombre}"></td>
+                <td th:text="${hospital.direccion}"></td>
+                <td th:text="${hospital.telefono}"></td>
+                <td th:text="${hospital.capacidad}"></td>
+                <td>
+                    <a th:href="@{/entidades/editar/{id}(id=${hospital.id})}">Editar</a>
+                    <a th:href="@{/entidades/eliminar/{id}(id=${hospital.id})}">Eliminar</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

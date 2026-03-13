@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Eliminar Hospital</title>
+</head>
+<body>
+    <h2>¿Estás seguro de que deseas eliminar este hospital?</h2>
+
+    <form th:action="@{/entidades/borrar}" th:object="${hospital}" method="post">
+        
+        <div>
+            <label>ID:</label>
+            <input type="number" th:field="*{id}" readonly />
+        </div>
+        <br>
+
+        <div>
+            <label>Nombre:</label>
+            <input type="text" th:field="*{nombre}" readonly />
+        </div>
+        <br>
+
+        <div>
+            <label>Dirección:</label>
+            <input type="text" th:field="*{direccion}" readonly />
+        </div>
+        <br>
+
+        <div>
+            <label>Teléfono:</label>
+            <input type="text" th:field="*{telefono}" readonly />
+        </div>
+        <br>
+
+        <div>
+            <label>Capacidad:</label>
+            <input type="number" th:field="*{capacidad}" readonly />
+        </div>
+        <br>
+
+        <div>
+            <button type="submit" style="color: red;">Eliminar</button>
+            <a th:href="@{/entidades}">Cancelar</a>
+        </div>
+    </form>
+</body>
+</html>
