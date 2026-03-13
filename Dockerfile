@@ -20,7 +20,7 @@ WORKDIR /app
 EXPOSE 8080
 
 # Copiamos el archivo .jar generado en la etapa anterior
-COPY --from=build /app/target/TABLA13-0.0.1-SNAPSHOT.jar app.jar
+COPY --from=build /app/target/tabla13-0.0.1-SNAPSHOT.jar app.jar
 
 # Comando para ejecutar la aplicación
 ENTRYPOINT ["java", "-jar", "app.jar"]
